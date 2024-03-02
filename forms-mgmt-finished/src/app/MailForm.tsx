@@ -58,7 +58,12 @@ export const MailForm = () => {
         ref={formRef}
         className="space-y-8"
         action={formAction}
-        onSubmit={form.handleSubmit(() => formRef.current?.submit())}
+        onSubmit={(evt) => {
+          evt.preventDefault();
+          form.handleSubmit(() => {
+            formRef.current?.submit();
+          })(evt);
+        }}
       >
         <div className="flex gap-2">
           <FormField
