@@ -61,7 +61,7 @@ export const MailForm = () => {
         onSubmit={(evt) => {
           evt.preventDefault();
           form.handleSubmit(() => {
-            action(new FormData(formRef.current!));
+            formAction(new FormData(formRef.current!));
           })(evt);
         }}
       >
